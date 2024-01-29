@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B2426D22B68488C00EDF5D4 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2426D12B68488C00EDF5D4 /* LandingView.swift */; };
+		3B2426D42B68494800EDF5D4 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2426D32B68494800EDF5D4 /* ChatView.swift */; };
+		3B2426D62B684CE100EDF5D4 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2426D52B684CE100EDF5D4 /* MessageRow.swift */; };
 		3B47EFE12B521914003208FA /* WebSocketExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFE02B521914003208FA /* WebSocketExampleApp.swift */; };
 		3B47EFE32B521914003208FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFE22B521914003208FA /* ContentView.swift */; };
 		3B47EFE52B521916003208FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B47EFE42B521916003208FA /* Assets.xcassets */; };
@@ -14,6 +17,7 @@
 		3B47EFF32B521917003208FA /* WebSocketExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFF22B521917003208FA /* WebSocketExampleTests.swift */; };
 		3B47EFFD2B521917003208FA /* WebSocketExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFFC2B521917003208FA /* WebSocketExampleUITests.swift */; };
 		3B47EFFF2B521917003208FA /* WebSocketExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFFE2B521917003208FA /* WebSocketExampleUITestsLaunchTests.swift */; };
+		3B47F00C2B5219DE003208FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47F00B2B5219DE003208FA /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B2426D12B68488C00EDF5D4 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		3B2426D32B68494800EDF5D4 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		3B2426D52B684CE100EDF5D4 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
 		3B47EFDD2B521914003208FA /* WebSocketExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebSocketExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B47EFE02B521914003208FA /* WebSocketExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketExampleApp.swift; sourceTree = "<group>"; };
 		3B47EFE22B521914003208FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +52,7 @@
 		3B47EFF82B521917003208FA /* WebSocketExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebSocketExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B47EFFC2B521917003208FA /* WebSocketExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketExampleUITests.swift; sourceTree = "<group>"; };
 		3B47EFFE2B521917003208FA /* WebSocketExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3B47F00B2B5219DE003208FA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,10 @@
 			children = (
 				3B47EFE02B521914003208FA /* WebSocketExampleApp.swift */,
 				3B47EFE22B521914003208FA /* ContentView.swift */,
+				3B2426D32B68494800EDF5D4 /* ChatView.swift */,
+				3B2426D52B684CE100EDF5D4 /* MessageRow.swift */,
+				3B2426D12B68488C00EDF5D4 /* LandingView.swift */,
+				3B47F00B2B5219DE003208FA /* ViewModel.swift */,
 				3B47EFE42B521916003208FA /* Assets.xcassets */,
 				3B47EFE62B521916003208FA /* WebSocketExample.entitlements */,
 				3B47EFE72B521916003208FA /* Preview Content */,
@@ -259,7 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2426D22B68488C00EDF5D4 /* LandingView.swift in Sources */,
 				3B47EFE32B521914003208FA /* ContentView.swift in Sources */,
+				3B2426D62B684CE100EDF5D4 /* MessageRow.swift in Sources */,
+				3B2426D42B68494800EDF5D4 /* ChatView.swift in Sources */,
+				3B47F00C2B5219DE003208FA /* ViewModel.swift in Sources */,
 				3B47EFE12B521914003208FA /* WebSocketExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

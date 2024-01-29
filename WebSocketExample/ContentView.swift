@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isInSession = false
+    let viewModel = ViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if isInSession {
+            ChatView(viewModel: viewModel, isInSession: $isInSession)
+        } else {
+            LandingView(viewModel: viewModel, isInSession: $isInSession)
         }
-        .padding()
     }
 }
 
