@@ -19,7 +19,6 @@ struct ChatView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        // set some state
                         viewModel.stop()
                         isInSession = false
                     }, label: {
@@ -30,15 +29,7 @@ struct ChatView: View {
             }
             Spacer()
             
-            if viewModel.messages.isEmpty {
-                Text("No messages!")
-            } else {
-                List {
-                    ForEach(viewModel.messages) { message in
-                        MessageRow(message: message)
-                    }
-                }
-            }
+            ChatMessagesView(viewModel: viewModel)
             
             Spacer()
             Divider()

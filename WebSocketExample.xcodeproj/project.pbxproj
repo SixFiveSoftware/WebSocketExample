@@ -12,6 +12,7 @@
 		3B2426D62B684CE100EDF5D4 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2426D52B684CE100EDF5D4 /* MessageRow.swift */; };
 		3B2426D82B69561A00EDF5D4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2426D72B69561A00EDF5D4 /* Message.swift */; };
 		3B2426DA2B69564800EDF5D4 /* MessageSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2426D92B69564800EDF5D4 /* MessageSide.swift */; };
+		3B2426DC2B69753400EDF5D4 /* ChatMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2426DB2B69753400EDF5D4 /* ChatMessagesView.swift */; };
 		3B47EFE12B521914003208FA /* WebSocketExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFE02B521914003208FA /* WebSocketExampleApp.swift */; };
 		3B47EFE32B521914003208FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFE22B521914003208FA /* ContentView.swift */; };
 		3B47EFE52B521916003208FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B47EFE42B521916003208FA /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		3B2426D52B684CE100EDF5D4 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
 		3B2426D72B69561A00EDF5D4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3B2426D92B69564800EDF5D4 /* MessageSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSide.swift; sourceTree = "<group>"; };
+		3B2426DB2B69753400EDF5D4 /* ChatMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesView.swift; sourceTree = "<group>"; };
 		3B47EFDD2B521914003208FA /* WebSocketExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebSocketExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B47EFE02B521914003208FA /* WebSocketExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketExampleApp.swift; sourceTree = "<group>"; };
 		3B47EFE22B521914003208FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				3B47EFE02B521914003208FA /* WebSocketExampleApp.swift */,
 				3B47EFE22B521914003208FA /* ContentView.swift */,
 				3B2426D32B68494800EDF5D4 /* ChatView.swift */,
+				3B2426DB2B69753400EDF5D4 /* ChatMessagesView.swift */,
 				3B2426D52B684CE100EDF5D4 /* MessageRow.swift */,
 				3B2426D92B69564800EDF5D4 /* MessageSide.swift */,
 				3B2426D12B68488C00EDF5D4 /* LandingView.swift */,
@@ -281,6 +284,7 @@
 				3B47EFE32B521914003208FA /* ContentView.swift in Sources */,
 				3B2426D62B684CE100EDF5D4 /* MessageRow.swift in Sources */,
 				3B2426D42B68494800EDF5D4 /* ChatView.swift in Sources */,
+				3B2426DC2B69753400EDF5D4 /* ChatMessagesView.swift in Sources */,
 				3B47F00C2B5219DE003208FA /* WebSocketManager.swift in Sources */,
 				3B47EFE12B521914003208FA /* WebSocketExampleApp.swift in Sources */,
 				3B2426DA2B69564800EDF5D4 /* MessageSide.swift in Sources */,

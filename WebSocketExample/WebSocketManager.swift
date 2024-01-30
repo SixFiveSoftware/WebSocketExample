@@ -10,6 +10,7 @@ import Foundation
 
 class WebSocketManager: NSObject, URLSessionWebSocketDelegate {
     let subject: PassthroughSubject<Message, Never> = .init()
+    private var timerCancellable: AnyCancellable?
     
     private lazy var webSocket: URLSessionWebSocketTask = {
         let url = URL(string: "wss://echo.websocket.org")!
@@ -19,6 +20,11 @@ class WebSocketManager: NSObject, URLSessionWebSocketDelegate {
     
     func start() {
         webSocket.resume()
+        
+        timerCancellable = Timer.publish(every: 1, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in self?.ping() }
+            
     }
     
     func ping() {
@@ -28,6 +34,7 @@ class WebSocketManager: NSObject, URLSessionWebSocketDelegate {
         }
     }
     func close() {
+        timerCancellable?.cancel()
         webSocket.cancel(with: .goingAway, reason: "Session ended".data(using: .utf8)!)
     }
     func send(message: String) {
