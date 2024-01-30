@@ -11,6 +11,11 @@ struct Message {
     let id = UUID()
     let side: MessageSide
     let messageDetail: MessageDetail
+    
+    var isUserMessage: Bool {
+        let regex = /Request served by [0-9a-f]{14}/
+        return messageDetail.text.contains(regex) == false
+    }
 }
 
 struct MessageDetail {

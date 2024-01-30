@@ -33,11 +33,8 @@ class WebSocketManager: NSObject, URLSessionWebSocketDelegate {
     func send(message: String) {
         Task {
             do {
-//                try await Task.sleep(for: .seconds(1))
-//                let value = Int.random(in: 0...1000)
                 try await webSocket.send(.string(message))
                 print("value \(message) sent!")
-//                self.send()
             } catch {
                 print("error sending: \(error.localizedDescription)")
             }

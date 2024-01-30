@@ -42,10 +42,18 @@ struct ChatView: View {
             
             Spacer()
             Divider()
-            TextField("Type a message", text: $messageToSend)
-                .padding()
-                .border(.secondary)
-                .padding()
+            HStack(spacing: 12) {
+                TextField("Type a message", text: $messageToSend)
+                    .frame(height: 50)
+                    .textFieldStyle(.roundedBorder)
+                Button(action: {
+                    viewModel.send(text: messageToSend)
+                    messageToSend = ""
+                }, label: {
+                    Text("Send")
+                })
+            }
+            .padding()
         }
         .onAppear {
             viewModel.start()
@@ -62,6 +70,7 @@ struct ChatView: View {
         self.socketManager = socketManager
         
         socketManager.subject
+            .filter(\.isUserMessage)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] message in self?.messages.append(message) }
             .store(in: &cancellables)
@@ -73,6 +82,12 @@ struct ChatView: View {
     
     func start() {
         socketManager.start()
+    }
+    
+    func send(text: String) {
+        let message = Message(side: .sent, messageDetail: .init(text: text, timeStamp: .now))
+        socketManager.send(message: text)
+        messages.append(message)
     }
 }
 
