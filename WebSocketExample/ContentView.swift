@@ -9,13 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isInSession = false
-    let viewModel = ViewModel()
     
     var body: some View {
         if isInSession {
-            ChatView(viewModel: viewModel, isInSession: $isInSession)
+            ChatView(viewModel: ChatViewModel(), isInSession: $isInSession)
         } else {
-            LandingView(viewModel: viewModel, isInSession: $isInSession)
+            LandingView(isInSession: $isInSession)
         }
     }
 }

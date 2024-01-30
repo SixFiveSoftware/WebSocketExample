@@ -19,7 +19,7 @@
 		3B47EFF32B521917003208FA /* WebSocketExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFF22B521917003208FA /* WebSocketExampleTests.swift */; };
 		3B47EFFD2B521917003208FA /* WebSocketExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFFC2B521917003208FA /* WebSocketExampleUITests.swift */; };
 		3B47EFFF2B521917003208FA /* WebSocketExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47EFFE2B521917003208FA /* WebSocketExampleUITestsLaunchTests.swift */; };
-		3B47F00C2B5219DE003208FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47F00B2B5219DE003208FA /* ViewModel.swift */; };
+		3B47F00C2B5219DE003208FA /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47F00B2B5219DE003208FA /* WebSocketManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 		3B47EFF82B521917003208FA /* WebSocketExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebSocketExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B47EFFC2B521917003208FA /* WebSocketExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketExampleUITests.swift; sourceTree = "<group>"; };
 		3B47EFFE2B521917003208FA /* WebSocketExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3B47F00B2B5219DE003208FA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3B47F00B2B5219DE003208FA /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 				3B2426D52B684CE100EDF5D4 /* MessageRow.swift */,
 				3B2426D92B69564800EDF5D4 /* MessageSide.swift */,
 				3B2426D12B68488C00EDF5D4 /* LandingView.swift */,
-				3B47F00B2B5219DE003208FA /* ViewModel.swift */,
+				3B47F00B2B5219DE003208FA /* WebSocketManager.swift */,
 				3B2426D72B69561A00EDF5D4 /* Message.swift */,
 				3B47EFE42B521916003208FA /* Assets.xcassets */,
 				3B47EFE62B521916003208FA /* WebSocketExample.entitlements */,
@@ -281,7 +281,7 @@
 				3B47EFE32B521914003208FA /* ContentView.swift in Sources */,
 				3B2426D62B684CE100EDF5D4 /* MessageRow.swift in Sources */,
 				3B2426D42B68494800EDF5D4 /* ChatView.swift in Sources */,
-				3B47F00C2B5219DE003208FA /* ViewModel.swift in Sources */,
+				3B47F00C2B5219DE003208FA /* WebSocketManager.swift in Sources */,
 				3B47EFE12B521914003208FA /* WebSocketExampleApp.swift in Sources */,
 				3B2426DA2B69564800EDF5D4 /* MessageSide.swift in Sources */,
 				3B2426D82B69561A00EDF5D4 /* Message.swift in Sources */,

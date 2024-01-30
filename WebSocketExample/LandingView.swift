@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct LandingView: View {
-    let viewModel: ViewModel
     @Binding var isInSession: Bool
     
     var body: some View {
         Button(action: {
-            viewModel.start()
             isInSession = true
         }, label: {
             Text("Start Chat")
@@ -22,5 +20,5 @@ struct LandingView: View {
 }
 
 #Preview {
-    LandingView(viewModel: ViewModel(), isInSession: .constant(false))
+    LandingView(isInSession: .constant(false))
 }

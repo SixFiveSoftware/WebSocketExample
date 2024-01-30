@@ -8,27 +8,48 @@
 import SwiftUI
 
 struct ChatView: View {
-    let viewModel: ViewModel
+    let viewModel: ChatViewModel
     @Binding var isInSession: Bool
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Button(action: {
-                    // set some state
-                    viewModel.close()
-                    isInSession = false
-                }, label: {
-                    Text("end chat")
-                })
-                .padding(.trailing)
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        // set some state
+                        viewModel.stop()
+                        isInSession = false
+                    }, label: {
+                        Text("end chat")
+                    })
+                    .padding(.trailing)
+                }
             }
+            Spacer()
         }
-        Spacer()
+        .onAppear {
+            viewModel.start()
+        }
+    }
+}
+
+@Observable final class ChatViewModel {
+    let socketManager: WebSocketManager
+    
+    init(socketManager: WebSocketManager = WebSocketManager()) {
+        self.socketManager = socketManager
+    }
+    
+    func stop() {
+        socketManager.close()
+    }
+    
+    func start() {
+        socketManager.start()
     }
 }
 
 #Preview {
-    ChatView(viewModel: ViewModel(), isInSession: .constant(true))
+    ChatView(viewModel: ChatViewModel(), isInSession: .constant(true))
 }
