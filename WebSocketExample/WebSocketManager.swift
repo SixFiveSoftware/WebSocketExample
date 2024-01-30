@@ -69,7 +69,7 @@ class WebSocketManager: NSObject, URLSessionWebSocketDelegate {
     }
     
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
-        print("session did open. protocol: \(`protocol` ?? "---")")
+        print("session did open")
         ping()
         receive()
 //        send()

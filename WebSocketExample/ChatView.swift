@@ -5,11 +5,13 @@
 //  Created by BJ Miller on 1/29/24.
 //
 
+import Combine
 import SwiftUI
 
 struct ChatView: View {
     let viewModel: ChatViewModel
     @Binding var isInSession: Bool
+    @State private var messageToSend: String = ""
     
     var body: some View {
         VStack {
@@ -27,6 +29,23 @@ struct ChatView: View {
                 }
             }
             Spacer()
+            
+            if viewModel.messages.isEmpty {
+                Text("No messages!")
+            } else {
+                List {
+                    ForEach(viewModel.messages) { message in
+                        MessageRow(message: message)
+                    }
+                }
+            }
+            
+            Spacer()
+            Divider()
+            TextField("Type a message", text: $messageToSend)
+                .padding()
+                .border(.secondary)
+                .padding()
         }
         .onAppear {
             viewModel.start()
@@ -36,9 +55,16 @@ struct ChatView: View {
 
 @Observable final class ChatViewModel {
     let socketManager: WebSocketManager
+    var messages: [Message] = []
+    private var cancellables: Set<AnyCancellable> = []
     
     init(socketManager: WebSocketManager = WebSocketManager()) {
         self.socketManager = socketManager
+        
+        socketManager.subject
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] message in self?.messages.append(message) }
+            .store(in: &cancellables)
     }
     
     func stop() {

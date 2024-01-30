@@ -8,6 +8,7 @@
 import Foundation
 
 struct Message {
+    let id = UUID()
     let side: MessageSide
     let messageDetail: MessageDetail
 }
@@ -20,3 +21,5 @@ struct MessageDetail {
         timeStamp.formatted(date: .abbreviated, time: .standard)
     }
 }
+
+extension Message: Identifiable {}
