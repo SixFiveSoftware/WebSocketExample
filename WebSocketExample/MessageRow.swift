@@ -7,38 +7,34 @@
 
 import SwiftUI
 
-enum MessageSide {
-    case sent, received
-    var backgroundColor: Color {
-        switch self {
-        case .sent: .blue
-        case .received: .green
-        }
-    }
-    var foregroundColor: Color {
-        switch self {
-        case .sent: .white
-        case .received: .black
-        }
-    }
-}
-
 struct MessageRow: View {
-    let side: MessageSide
-    let text: String
+    let message: Message
     
     var body: some View {
-        HStack {
-            if side == .sent {
-                Spacer(minLength: 60)
+        VStack {
+            HStack {
+                if message.side == .sent {
+                    Spacer(minLength: 60)
+                }
+                Text(message.messageDetail.text)
+                    .foregroundStyle(message.side.foregroundColor)
+                    .padding(12)
+                    .background(message.side.backgroundColor)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                if message.side == .received {
+                    Spacer(minLength: 60)
+                }
             }
-            Text(text)
-                .foregroundStyle(side.foregroundColor)
-                .padding(12)
-                .background(side.backgroundColor)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-            if side == .received {
-                Spacer(minLength: 60)
+            HStack {
+                if message.side == .sent {
+                    Spacer(minLength: 60)
+                }
+                Text(message.messageDetail.formattedDate)
+                    .foregroundStyle(.secondary)
+                    .font(.footnote)
+                if message.side == .received {
+                    Spacer(minLength: 60)
+                }
             }
         }
         .padding(20)
@@ -47,8 +43,8 @@ struct MessageRow: View {
 
 #Preview {
     VStack {
-        MessageRow(side: .sent, text: "hello world")
-        MessageRow(side: .received, text: "hey back")
-        MessageRow(side: .received, text: "hey backhey backhey backhey backhey backhey backhey back")
+        MessageRow(message: .init(side: .sent, messageDetail: .init(text: "hello world", timeStamp: Date())))
+        MessageRow(message: .init(side: .received, messageDetail: .init(text: "hey back", timeStamp: Date())))
+        MessageRow(message: .init(side: .received, messageDetail: .init(text: "hey backhey backhey backhey backhey backhey backhey back", timeStamp: Date())))
     }
 }
